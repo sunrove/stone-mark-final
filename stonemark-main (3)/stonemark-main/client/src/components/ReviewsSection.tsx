@@ -8,48 +8,11 @@ import { useEffect, useRef, useState } from "react";
 import { Star, Quote } from "lucide-react";
 
 const reviews = [
-  {
-    name: "David M.",
-    location: "Brentwood, TN",
-    rating: 5,
-    text: "Robert and his crew replaced our entire roof in one day. Showed up on time, worked clean, and the quality is outstanding. Fair pricing and great communication throughout. Highly recommend StoneMark.",
-    service: "Asphalt Shingle Replacement",
-  },
-  {
-    name: "Jennifer K.",
-    location: "Franklin, TN",
-    rating: 5,
-    text: "After the hailstorm, Robert responded within hours. He walked us through the insurance process, handled everything professionally, and the new roof looks incredible. Fast, reliable, and honest.",
-    service: "Storm Damage Repair",
-  },
-  {
-    name: "Mark T.",
-    location: "Murfreesboro, TN",
-    rating: 5,
-    text: "We got three bids and StoneMark came in competitive while offering the best warranty. The standing seam metal roof they installed is beautiful. Robert was hands-on the entire time — you can tell he cares.",
-    service: "Standing Seam Metal Roof",
-  },
-  {
-    name: "Susan R.",
-    location: "Nolensville, TN",
-    rating: 5,
-    text: "Excellent work on our gutters and soffit repair. The crew was professional and cleaned up perfectly. Robert personally inspected the finished job. This is what a local contractor should look like.",
-    service: "Gutters & Soffit Repair",
-  },
-  {
-    name: "Chris B.",
-    location: "Spring Hill, TN",
-    rating: 5,
-    text: "45 years of experience shows. Our commercial building needed a TPO roof and StoneMark delivered on time and on budget. Robert's knowledge of roofing systems is impressive. Will use again.",
-    service: "Commercial TPO Roofing",
-  },
-  {
-    name: "Amanda L.",
-    location: "Nashville, TN",
-    rating: 5,
-    text: "From the first call to the final inspection, the experience was smooth. Robert is the kind of contractor you want — responsive, knowledgeable, and honest. The roof looks great and the price was fair.",
-    service: "Asphalt Shingle Replacement",
-  },
+  { text: "We Contracted with Robert Yeatman to enclose our carport and replace the roof. His crew was punctual and did an Excellent job... It looks Great!!", author: "Chris Morse", location: "Google Review", rating: 5 },
+  { text: "StoneMark did an excellent job on our roof: one day here and done. Everything was explained thoroughly and we really got the sense we were working with true professionals.", author: "Shannon Black", location: "Google Review", rating: 5 },
+  { text: "They gave us a fair price and did a very good job replacing our asphalt shingles roof in Mt. Juliet.", author: "Val Hard", location: "Mt. Juliet, TN", rating: 5 },
+  { text: "I hired The Stonemark Company after doing my research and getting a few estimates. They quoted me about $900 cheaper than the others using the same equipment... with the same warranties.", author: "Jeff Gervais", location: "Google Review", rating: 5 },
+  { text: "Robert and his team did a fantastic job on our roof replacement. He explained the product choices and process thoroughly and kept us up to date through the completion of the job.", author: "Parker Redmond", location: "Google Review", rating: 5 },
 ];
 
 function ReviewCard({ review, index, visible }: {
@@ -156,7 +119,7 @@ export default function ReviewsSection() {
             </div>
             <div className="border-l border-white/10 pl-4">
               <div className="font-['DM_Sans'] text-white text-sm font-medium">Google Rating</div>
-              <div className="font-['DM_Sans'] text-white/50 text-xs">22+ Reviews</div>
+              <div className="font-['DM_Sans'] text-white/50 text-xs">25+ Reviews</div>
             </div>
           </div>
         </div>

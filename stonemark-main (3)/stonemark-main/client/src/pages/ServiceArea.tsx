@@ -15,8 +15,8 @@ const counties = [
     name: "Davidson County",
     highlight: "Nashville Metro",
     color: "#F97316",
-    cities: ["Nashville", "Antioch", "Bellevue", "Donelson", "Hermitage", "Madison", "Old Hickory", "Goodlettsville (partial)"],
-    desc: "Our home base. We serve all Nashville neighborhoods and Davidson County communities with the same hands-on service that built our reputation.",
+    cities: ["Nashville", "Antioch", "Bellevue", "Donelson", "Hermitage", "Madison", "Old Hickory", "Goodlettsville"],
+    desc: "We serve all Nashville neighborhoods and Davidson County communities with the same hands-on service that built our reputation.",
   },
   {
     name: "Williamson County",
@@ -55,12 +55,12 @@ export default function ServiceArea() {
         eyebrow="Service Area"
         title="SERVING ALL OF"
         titleAccent="MIDDLE TENNESSEE."
-        subtitle="Based in Nashville, we serve homeowners and businesses across Davidson, Williamson, Rutherford, and Maury counties — and the communities in between."
+        subtitle="We serve homeowners and businesses across Davidson, Williamson, Rutherford, and Maury counties — and the communities in between. We service any home within an hour of Murfreesboro."
         bgImage={HERO_IMAGE}
       />
 
       {/* Overview */}
-      <section className="py-24 bg-[#3A3F4A]">
+      <section className="py-24 bg-background">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
             <div>
@@ -68,11 +68,11 @@ export default function ServiceArea() {
                 <div className="w-8 h-[3px] bg-[#F97316]" />
                 <span className="font-['Barlow_Condensed'] text-[#F97316] uppercase tracking-[0.25em] text-sm font-semibold">Coverage Overview</span>
               </div>
-              <h2 className="font-['Barlow_Condensed'] text-white text-4xl md:text-5xl uppercase mb-6 leading-none" style={{ fontWeight: 900 }}>
+              <h2 className="font-['Barlow_Condensed'] text-foreground text-4xl md:text-5xl uppercase mb-6 leading-none" style={{ fontWeight: 900 }}>
                 YOUR LOCAL<br /><span className="text-[#F97316]">ROOFER.</span>
               </h2>
-              <div className="space-y-4 font-['DM_Sans'] text-white/70 text-base leading-relaxed">
-                <p>StoneMark is based in Nashville and serves the greater Middle Tennessee region. We cover four primary counties — Davidson, Williamson, Rutherford, and Maury — encompassing dozens of cities and communities from the Nashville metro to the southern suburbs.</p>
+              <div className="space-y-4 font-['DM_Sans'] text-foreground/70 text-base leading-relaxed">
+                <p>StoneMark serves the greater Middle Tennessee region. We service any home within an hour of Murfreesboro. We cover four primary counties — Davidson, Williamson, Rutherford, and Maury — encompassing dozens of cities and communities from the Nashville metro to the southern suburbs.</p>
                 <p>Unlike large regional contractors who dispatch crews from distant locations, StoneMark is genuinely local. Owner Robert Yeatman lives and works in Middle Tennessee. When you call, you're reaching a neighbor who understands your community, your climate, and the specific roofing challenges of the region.</p>
                 <p>Not sure if we cover your specific area? Give us a call at <a href="tel:6152997552" className="text-[#F97316] hover:underline">(615) 299-7552</a>. We're happy to confirm coverage and schedule an estimate.</p>
               </div>
@@ -84,9 +84,9 @@ export default function ServiceArea() {
                 { label: "Years Serving Middle TN", value: "12+" },
                 { label: "Miles from Nashville", value: "50+" },
               ].map((stat) => (
-                <div key={stat.label} className="bg-[#4A5060] border border-white/10 p-6 text-center">
+                <div key={stat.label} className="bg-card border border-border p-6 text-center">
                   <div className="font-['Barlow_Condensed'] text-[#F97316] text-4xl leading-none mb-2" style={{ fontWeight: 900 }}>{stat.value}</div>
-                  <div className="font-['Barlow_Condensed'] text-white/60 uppercase tracking-widest text-xs">{stat.label}</div>
+                  <div className="font-['Barlow_Condensed'] text-muted-foreground uppercase tracking-widest text-xs">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -99,29 +99,29 @@ export default function ServiceArea() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
             {counties.map((county) => (
-              <div key={county.name} className="border border-white/10 bg-[#4A5060] hover:border-[#F97316]/40 transition-all duration-300">
-                <div className="p-6 border-b border-white/10">
+              <div key={county.name} className="border border-border bg-card hover:border-[#F97316]/40 transition-all duration-300">
+                <div className="p-6 border-b border-border">
                   <div className="flex items-start justify-between gap-4 mb-3">
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         <MapPin size={16} className="text-[#F97316]" />
                         <span className="font-['Barlow_Condensed'] text-[#F97316] uppercase tracking-widest text-xs font-semibold">{county.highlight}</span>
                       </div>
-                      <h3 className="font-['Barlow_Condensed'] text-white text-2xl uppercase" style={{ fontWeight: 900 }}>{county.name}</h3>
+                      <h3 className="font-['Barlow_Condensed'] text-foreground text-2xl uppercase" style={{ fontWeight: 900 }}>{county.name}</h3>
                     </div>
                     <div className="w-10 h-10 bg-[#F97316]/15 flex items-center justify-center flex-shrink-0">
                       <div className="w-4 h-4 bg-[#F97316] rotate-45" />
                     </div>
                   </div>
-                  <p className="font-['DM_Sans'] text-white/60 text-sm leading-relaxed">{county.desc}</p>
+                  <p className="font-['DM_Sans'] text-foreground/60 text-sm leading-relaxed">{county.desc}</p>
                 </div>
                 <div className="p-6">
-                  <div className="font-['Barlow_Condensed'] text-white/40 uppercase tracking-widest text-xs mb-3">Cities & Communities</div>
+                  <div className="font-['Barlow_Condensed'] text-muted-foreground uppercase tracking-widest text-xs mb-3">Cities & Communities</div>
                   <div className="flex flex-wrap gap-2">
                     {county.cities.map((city) => (
-                      <div key={city} className="flex items-center gap-1.5 bg-[#3A3F4A] border border-white/10 px-3 py-1.5">
+                      <div key={city} className="flex items-center gap-1.5 bg-background border border-border px-3 py-1.5">
                         <CheckCircle size={11} className="text-[#F97316]" />
-                        <span className="font-['DM_Sans'] text-white/70 text-xs">{city}</span>
+                        <span className="font-['DM_Sans'] text-foreground/70 text-xs">{city}</span>
                       </div>
                     ))}
                   </div>
@@ -131,7 +131,7 @@ export default function ServiceArea() {
           </div>
 
           {/* Full city list */}
-          <div className="bg-[#4A5060] border border-white/10 p-8">
+          <div className="bg-card border border-border p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-6 h-[3px] bg-[#F97316]" />
               <span className="font-['Barlow_Condensed'] text-[#F97316] uppercase tracking-[0.25em] text-sm font-semibold">All Cities We Serve</span>
@@ -147,30 +147,30 @@ export default function ServiceArea() {
               ].map((city) => (
                 <div key={city} className="flex items-center gap-2 py-1.5">
                   <div className="w-1 h-1 bg-[#F97316] rotate-45 flex-shrink-0" />
-                  <span className="font-['DM_Sans'] text-white/60 text-sm">{city}</span>
+                  <span className="font-['DM_Sans'] text-foreground/60 text-sm">{city}</span>
                 </div>
               ))}
             </div>
-            <p className="font-['DM_Sans'] text-white/35 text-xs mt-6">Don't see your city? <a href="tel:6152997552" className="text-[#F97316] hover:underline">Call us</a> — we likely still serve your area.</p>
+            <p className="font-['DM_Sans'] text-muted-foreground/50 text-xs mt-6">Don't see your city? <a href="tel:6152997552" className="text-[#F97316] hover:underline">Call us</a> — we likely still serve your area.</p>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-24" style={{ background: "linear-gradient(135deg, #22252e 0%, #1C1F26 100%)" }}>
+      <section className="py-24 bg-card">
         <div className="container">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-[3px] bg-[#F97316]" />
             <span className="font-['Barlow_Condensed'] text-[#F97316] uppercase tracking-[0.25em] text-sm font-semibold">Coverage Questions</span>
           </div>
-          <h2 className="font-['Barlow_Condensed'] text-white leading-none mb-10" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}>
+          <h2 className="font-['Barlow_Condensed'] text-foreground leading-none mb-10" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}>
             COMMON<br /><span className="text-[#F97316]">QUESTIONS.</span>
           </h2>
           <div className="max-w-3xl space-y-5">
             {faqArea.map((faq, i) => (
-              <div key={i} className="border border-white/10 bg-[#3A3F4A]/60 p-6">
-                <h4 className="font-['Barlow_Condensed'] text-white text-lg uppercase tracking-wide mb-2" style={{ fontWeight: 700 }}>{faq.q}</h4>
-                <p className="font-['DM_Sans'] text-white/60 text-sm leading-relaxed">{faq.a}</p>
+              <div key={i} className="border border-border bg-background p-6">
+                <h4 className="font-['Barlow_Condensed'] text-foreground text-lg uppercase tracking-wide mb-2" style={{ fontWeight: 700 }}>{faq.q}</h4>
+                <p className="font-['DM_Sans'] text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>

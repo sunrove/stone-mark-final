@@ -39,30 +39,19 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#3A3F4A]/95 backdrop-blur-sm shadow-[0_2px_24px_rgba(0,0,0,0.6)] border-b border-[#F97316]/20"
-            : "bg-[#3A3F4A]/80 backdrop-blur-sm border-b border-white/5"
+            ? "glass shadow-md border-b"
+            : "bg-black/30 backdrop-blur-md border-b border-white/10"
         }`}
       >
         <div className="container">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-10 h-10 flex items-center justify-center bg-[#F97316] flex-shrink-0">
-                <svg viewBox="0 0 40 40" className="w-7 h-7 fill-white">
-                  <polygon points="20,4 36,32 4,32" />
-                </svg>
-              </div>
-              <div>
-                <div
-                  className="font-['Barlow_Condensed'] font-900 text-xl md:text-2xl uppercase tracking-wider text-white leading-none"
-                  style={{ fontWeight: 900 }}
-                >
-                  StoneMark
-                </div>
-                <div className="text-[10px] text-[#F97316] uppercase tracking-[0.2em] font-['DM_Sans'] font-medium leading-none">
-                  Roofing Company
-                </div>
-              </div>
+            <Link href="/" className="flex items-center group py-2">
+              <img 
+                src="/stonemark-logo-recolor.png" 
+                alt="StoneMark Roofing" 
+                className={`h-11 md:h-14 w-auto transition-all duration-300 ${scrolled ? "drop-shadow-sm" : "brightness-0 invert drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"}`} 
+              />
             </Link>
 
             {/* Desktop Nav */}
@@ -76,7 +65,7 @@ export default function Navbar() {
                     className={`font-['Barlow_Condensed'] font-700 text-sm uppercase tracking-widest transition-colors duration-200 pb-0.5 ${
                       isActive
                         ? "text-[#F97316] border-b-2 border-[#F97316]"
-                        : "text-white/80 hover:text-[#F97316] border-b-2 border-transparent"
+                        : (scrolled ? "text-foreground/80 hover:text-[#F97316]" : "text-white drop-shadow-md hover:text-[#F97316]") + " border-b-2 border-transparent"
                     }`}
                     style={{ fontWeight: 700 }}
                   >
@@ -99,7 +88,7 @@ export default function Navbar() {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden text-white p-2"
+              className={`md:hidden p-2 transition-colors ${scrolled ? "text-foreground" : "text-white"}`}
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
             >
@@ -115,20 +104,20 @@ export default function Navbar() {
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="absolute inset-0 bg-black/70" onClick={() => setOpen(false)} />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setOpen(false)} />
         <div
-          className={`absolute top-0 right-0 h-full w-72 bg-[#3A3F4A] border-l border-[#F97316]/30 transition-transform duration-300 ${
+          className={`absolute top-0 right-0 h-full w-72 bg-card border-l border-border transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex items-center justify-between p-6 border-b border-white/10">
+          <div className="flex items-center justify-between p-6 border-b border-border">
             <span
-              className="font-['Barlow_Condensed'] text-xl uppercase tracking-wider text-white"
+              className="font-['Barlow_Condensed'] text-xl uppercase tracking-wider text-foreground"
               style={{ fontWeight: 800 }}
             >
               Menu
             </span>
-            <button onClick={() => setOpen(false)} className="text-white/60 hover:text-white">
+            <button onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">
               <X size={22} />
             </button>
           </div>
@@ -139,8 +128,8 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-left font-['Barlow_Condensed'] font-700 text-lg uppercase tracking-widest transition-colors py-3 border-b border-white/5 ${
-                    isActive ? "text-[#F97316]" : "text-white/80 hover:text-[#F97316]"
+                  className={`text-left font-['Barlow_Condensed'] font-700 text-lg uppercase tracking-widest transition-colors py-3 border-b border-border/50 ${
+                    isActive ? "text-[#F97316]" : "text-foreground/70 hover:text-[#F97316]"
                   }`}
                   style={{ fontWeight: 700 }}
                 >

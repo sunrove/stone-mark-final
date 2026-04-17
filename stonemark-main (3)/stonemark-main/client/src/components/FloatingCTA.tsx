@@ -19,7 +19,7 @@ export default function FloatingCTA() {
   return (
     <a
       href="tel:6152997552"
-      className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#F97316] text-white px-5 py-3 shadow-[0_4px_24px_rgba(249,115,22,0.5)] transition-all duration-300 ${
+      className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-orange text-white h-14 px-6 rounded-full shadow-lg shadow-orange/20 transition-all duration-300 hover:scale-105 active:scale-95 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
       aria-label="Call StoneMark"

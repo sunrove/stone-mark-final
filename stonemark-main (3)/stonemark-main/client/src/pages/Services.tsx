@@ -13,6 +13,8 @@ const SHINGLE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/
 const METAL_IMAGE   = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-metal-roof-YSzM9t43uu4gj6TMuEpYoM.webp";
 const GUTTERS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-gutters-inahw44ikfzdtCLnRktdzR.webp";
 const TPO_IMAGE     = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-tpo-roof-GWvFprdbgEknM55hGy7TBA.webp";
+const SOFFIT_IMAGE  = "/soffit-fascia.png";
+const STORM_IMAGE   = "/storm-damage.png";
 
 const services = [
   {
@@ -95,7 +97,7 @@ const services = [
     id: "soffit-fascia",
     title: "Soffit & Fascia Repair",
     tag: "Repair",
-    image: null,
+    image: SOFFIT_IMAGE,
     intro: "Soffit and fascia are critical components of your roofing system that are often overlooked until serious damage occurs. These boards protect the rafters and roof structure from moisture, pests, and weather. StoneMark provides expert soffit and fascia repair and replacement using durable materials that match your home's existing profile.",
     features: [
       "Rotted or damaged wood fascia replacement",
@@ -114,7 +116,7 @@ const services = [
     id: "storm-damage",
     title: "Storm Damage Repair & Insurance Claims",
     tag: "Emergency",
-    image: null,
+    image: STORM_IMAGE,
     intro: "Middle Tennessee is no stranger to severe weather — hail, high winds, and tornadoes can cause significant roof damage in minutes. StoneMark provides rapid response for storm-damaged roofs and has extensive experience working with homeowners' insurance companies to ensure you receive the coverage you're entitled to.",
     features: [
       "Rapid response — often same-day or next-day",
@@ -134,7 +136,7 @@ const services = [
 const faqs = [
   { q: "How long does a roof replacement take?", a: "Most residential asphalt shingle roofs are completed in a single day. Larger homes, complex roof geometries, or premium materials like metal may require 2–3 days. We'll give you a specific timeline during your estimate." },
   { q: "Do you offer financing?", a: "Yes. StoneMark offers flexible financing options to fit a variety of budgets. Ask us about available payment plans when you request your estimate." },
-  { q: "What warranty do I get on a new roof?", a: "Warranty coverage depends on the product and installation system. GAF asphalt shingle systems can carry up to 50-year limited warranties on materials, plus our workmanship guarantee. Metal and TPO systems carry their own manufacturer warranties. We'll explain all warranty options during your consultation." },
+  { q: "What warranty do I get on a new roof?", a: "Warranty coverage depends on the product and installation system. The GAF System Plus Warranty provides for a full 50 years of non prorated protection. It is transferrable to the next buyer. Metal and TPO systems carry their own manufacturer warranties. We'll explain all warranty options during your consultation." },
   { q: "Are you licensed and insured?", a: "Yes. StoneMark is fully licensed, bonded, and insured with $2 million in liability coverage. We're also GAF Certified and OSHA certified. We're happy to provide proof of insurance before any work begins." },
   { q: "Do you handle insurance claims?", a: "Absolutely. We work directly with insurance adjusters and have extensive experience documenting storm damage, preparing estimates, and negotiating with carriers to ensure you receive fair coverage." },
   { q: "What areas do you serve?", a: "We serve Nashville and the greater Middle Tennessee region, including Brentwood, Franklin, Murfreesboro, Smyrna, Nolensville, Spring Hill, Columbia, and surrounding areas across Davidson, Williamson, Rutherford, and Maury counties." },
@@ -143,28 +145,28 @@ const faqs = [
 function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   return (
-    <section className="py-24" style={{ background: "linear-gradient(135deg, #22252e 0%, #1C1F26 100%)" }}>
+    <section className="py-24 bg-card">
       <div className="container">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-[3px] bg-[#F97316]" />
           <span className="font-['Barlow_Condensed'] text-[#F97316] uppercase tracking-[0.25em] text-sm font-semibold">Common Questions</span>
         </div>
-        <h2 className="font-['Barlow_Condensed'] text-white leading-none mb-12" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}>
+        <h2 className="font-['Barlow_Condensed'] text-foreground leading-none mb-12" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}>
           FREQUENTLY ASKED<br /><span className="text-[#F97316]">QUESTIONS.</span>
         </h2>
         <div className="max-w-3xl space-y-2">
           {faqs.map((faq, i) => (
-            <div key={i} className="border border-white/10 bg-[#3A3F4A]/60">
+            <div key={i} className="border border-border bg-background">
               <button
                 onClick={() => setOpenIdx(openIdx === i ? null : i)}
                 className="w-full flex items-center justify-between p-5 text-left gap-4"
               >
-                <span className="font-['Barlow_Condensed'] text-white text-base uppercase tracking-wide" style={{ fontWeight: 700 }}>{faq.q}</span>
-                {openIdx === i ? <ChevronUp size={18} className="text-[#F97316] flex-shrink-0" /> : <ChevronDown size={18} className="text-white/40 flex-shrink-0" />}
+                <span className="font-['Barlow_Condensed'] text-foreground text-base uppercase tracking-wide" style={{ fontWeight: 700 }}>{faq.q}</span>
+                {openIdx === i ? <ChevronUp size={18} className="text-[#F97316] flex-shrink-0" /> : <ChevronDown size={18} className="text-muted-foreground flex-shrink-0" />}
               </button>
               {openIdx === i && (
-                <div className="px-5 pb-5 border-t border-white/10 pt-4">
-                  <p className="font-['DM_Sans'] text-white/65 text-sm leading-relaxed">{faq.a}</p>
+                <div className="px-5 pb-5 border-t border-border pt-4">
+                  <p className="font-['DM_Sans'] text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
                 </div>
               )}
             </div>
@@ -187,7 +189,7 @@ export default function Services() {
       />
 
       {/* Services list */}
-      <section className="py-16 bg-[#3A3F4A]">
+      <section className="py-16 bg-background">
         <div className="container space-y-20">
           {services.map((service, i) => (
             <div key={service.id} id={service.id} className={`grid lg:grid-cols-2 gap-12 items-start ${i % 2 === 1 ? "lg:grid-flow-dense" : ""}`}>
@@ -202,12 +204,12 @@ export default function Services() {
                     </div>
                   </div>
                 ) : (
-                  <div className="relative h-64 bg-[#4A5060] border border-white/10 flex items-center justify-center">
+                  <div className="relative h-64 bg-muted border border-border flex items-center justify-center">
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-[#F97316]/15 flex items-center justify-center mx-auto mb-4">
+                      <div className="w-16 h-16 bg-[#F97316]/10 flex items-center justify-center mx-auto mb-4">
                         <div className="w-8 h-8 bg-[#F97316] rotate-45" />
                       </div>
-                      <div className="font-['Barlow_Condensed'] text-white/40 uppercase tracking-widest text-sm">{service.tag}</div>
+                      <div className="font-['Barlow_Condensed'] text-muted-foreground uppercase tracking-widest text-sm">{service.tag}</div>
                     </div>
                     <div className="absolute top-4 left-4 bg-[#F97316] px-3 py-1">
                       <span className="font-['Barlow_Condensed'] text-white text-sm uppercase tracking-widest font-semibold">{service.tag}</span>
@@ -222,23 +224,23 @@ export default function Services() {
                   <div className="w-6 h-[3px] bg-[#F97316]" />
                   <span className="font-['Barlow_Condensed'] text-[#F97316] uppercase tracking-widest text-xs font-semibold">{service.tag}</span>
                 </div>
-                <h2 className="font-['Barlow_Condensed'] text-white text-3xl md:text-4xl uppercase mb-4 leading-tight" style={{ fontWeight: 900 }}>{service.title}</h2>
-                <p className="font-['DM_Sans'] text-white/70 text-base leading-relaxed mb-5">{service.intro}</p>
-                <p className="font-['DM_Sans'] text-white/55 text-sm leading-relaxed mb-6">{service.details}</p>
+                <h2 className="font-['Barlow_Condensed'] text-foreground text-3xl md:text-4xl uppercase mb-4 leading-tight" style={{ fontWeight: 900 }}>{service.title}</h2>
+                <p className="font-['DM_Sans'] text-foreground/70 text-base leading-relaxed mb-5">{service.intro}</p>
+                <p className="font-['DM_Sans'] text-foreground/55 text-sm leading-relaxed mb-6">{service.details}</p>
 
                 {/* Features */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
                   {service.features.map((f) => (
                     <div key={f} className="flex items-start gap-2">
                       <CheckCircle size={15} className="text-[#F97316] flex-shrink-0 mt-0.5" />
-                      <span className="font-['DM_Sans'] text-white/65 text-sm">{f}</span>
+                      <span className="font-['DM_Sans'] text-foreground/65 text-sm">{f}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Warranty note */}
                 <div className="border-l-4 border-[#F97316] pl-4 mb-6">
-                  <p className="font-['DM_Sans'] text-white/55 text-sm italic">{service.warranty}</p>
+                  <p className="font-['DM_Sans'] text-foreground/55 text-sm italic">{service.warranty}</p>
                 </div>
 
                 <Link href="/contact" className="btn-orange inline-flex items-center gap-2">

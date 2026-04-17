@@ -26,7 +26,7 @@ const serviceLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2A2F3A] border-t border-white/10">
+    <footer className="bg-card border-t border-border">
       {/* Orange top accent */}
       <div className="h-[3px] bg-[#F97316]" />
 
@@ -35,25 +35,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-4 group">
-              <div className="w-10 h-10 bg-[#F97316] flex items-center justify-center flex-shrink-0">
-                <svg viewBox="0 0 40 40" className="w-7 h-7 fill-white">
-                  <polygon points="20,4 36,32 4,32" />
-                </svg>
-              </div>
-              <div>
-                <div
-                  className="font-['Barlow_Condensed'] text-xl uppercase tracking-wider text-white leading-none"
-                  style={{ fontWeight: 900 }}
-                >
-                  StoneMark
-                </div>
-                <div className="text-[10px] text-[#F97316] uppercase tracking-[0.2em] font-['DM_Sans'] font-medium leading-none">
-                  Roofing Company
-                </div>
-              </div>
+            <Link href="/" className="flex items-center mb-6 group">
+              <img 
+                src="/stonemark-logo-recolor.png" 
+                alt="StoneMark Roofing" 
+                className="h-14 w-auto drop-shadow-sm opacity-90 group-hover:opacity-100 transition-opacity" 
+              />
             </Link>
-            <p className="font-['DM_Sans'] text-white/50 text-sm leading-relaxed mb-5">
+            <p className="font-['DM_Sans'] text-foreground/50 text-sm leading-relaxed mb-5">
               Nashville's trusted roofing contractor. 45+ years of experience.
               GAF Certified. Serving Middle Tennessee since 2012.
             </p>
@@ -62,7 +51,7 @@ export default function Footer() {
               {["GAF Certified", "OSHA Certified", "Licensed & Bonded", "A+ BBB Rating"].map((c) => (
                 <div key={c} className="flex items-center gap-2">
                   <div className="w-1 h-1 bg-[#F97316] rotate-45" />
-                  <span className="font-['DM_Sans'] text-white/40 text-xs">{c}</span>
+                  <span className="font-['DM_Sans'] text-foreground/40 text-xs">{c}</span>
                 </div>
               ))}
             </div>
@@ -71,7 +60,7 @@ export default function Footer() {
           {/* Services column */}
           <div>
             <div
-              className="font-['Barlow_Condensed'] text-white text-sm uppercase tracking-widest mb-5"
+              className="font-['Barlow_Condensed'] text-foreground text-sm uppercase tracking-widest mb-5"
               style={{ fontWeight: 700 }}
             >
               Our Services
@@ -81,7 +70,7 @@ export default function Footer() {
                 <li key={s.label}>
                   <Link
                     href={s.href}
-                    className="font-['DM_Sans'] text-white/50 text-sm hover:text-[#F97316] transition-colors"
+                    className="font-['DM_Sans'] text-foreground/50 text-sm hover:text-[#F97316] transition-colors"
                   >
                     {s.label}
                   </Link>
@@ -93,7 +82,7 @@ export default function Footer() {
           {/* Navigation column */}
           <div>
             <div
-              className="font-['Barlow_Condensed'] text-white text-sm uppercase tracking-widest mb-5"
+              className="font-['Barlow_Condensed'] text-foreground text-sm uppercase tracking-widest mb-5"
               style={{ fontWeight: 700 }}
             >
               Quick Links
@@ -103,7 +92,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-['DM_Sans'] text-white/50 text-sm hover:text-[#F97316] transition-colors"
+                    className="font-['DM_Sans'] text-foreground/50 text-sm hover:text-[#F97316] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -115,7 +104,7 @@ export default function Footer() {
           {/* Contact column */}
           <div>
             <div
-              className="font-['Barlow_Condensed'] text-white text-sm uppercase tracking-widest mb-5"
+              className="font-['Barlow_Condensed'] text-foreground text-sm uppercase tracking-widest mb-5"
               style={{ fontWeight: 700 }}
             >
               Contact Us
@@ -123,19 +112,19 @@ export default function Footer() {
             <div className="space-y-4">
               <a href="tel:6152997552" className="flex items-start gap-3 group">
                 <Phone size={15} className="text-[#F97316] mt-0.5 flex-shrink-0" />
-                <span className="font-['DM_Sans'] text-white/60 text-sm group-hover:text-[#F97316] transition-colors">
+                <span className="font-['DM_Sans'] text-foreground/60 text-sm group-hover:text-[#F97316] transition-colors">
                   (615) 299-7552
                 </span>
               </a>
               <a href="mailto:robert@stonemarkco.com" className="flex items-start gap-3 group">
                 <Mail size={15} className="text-[#F97316] mt-0.5 flex-shrink-0" />
-                <span className="font-['DM_Sans'] text-white/60 text-sm group-hover:text-[#F97316] transition-colors break-all">
+                <span className="font-['DM_Sans'] text-foreground/60 text-sm group-hover:text-[#F97316] transition-colors break-all">
                   robert@stonemarkco.com
                 </span>
               </a>
               <div className="flex items-start gap-3">
                 <MapPin size={15} className="text-[#F97316] mt-0.5 flex-shrink-0" />
-                <span className="font-['DM_Sans'] text-white/60 text-sm">
+                <span className="font-['DM_Sans'] text-foreground/60 text-sm">
                   Nashville, Tennessee
                   <br />
                   Middle Tennessee
@@ -155,12 +144,12 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/5">
+      <div className="border-t border-border">
         <div className="container py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-['DM_Sans'] text-white/30 text-xs">
+          <p className="font-['DM_Sans'] text-foreground/30 text-xs">
             © {new Date().getFullYear()} The StoneMark Company. All rights reserved. Nashville, Tennessee.
           </p>
-          <p className="font-['DM_Sans'] text-white/20 text-xs">
+          <p className="font-['DM_Sans'] text-foreground/20 text-xs">
             Licensed · Bonded · Insured · $2M Liability Coverage
           </p>
         </div>

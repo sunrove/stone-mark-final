@@ -11,18 +11,31 @@ import PageHero from "@/components/PageHero";
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-shingle-roof-jQW6GRNKU9ZJ4WaJaoDf5b.webp";
 
 const reviews = [
-  { name: "David M.", location: "Brentwood, TN", rating: 5, service: "Asphalt Shingle Replacement", date: "October 2024", text: "Robert and his crew replaced our entire roof in one day. They showed up on time, worked clean, and the quality is outstanding. Robert communicated throughout the entire process — before, during, and after. Fair pricing and no surprises on the invoice. I've already recommended StoneMark to two neighbors." },
-  { name: "Jennifer K.", location: "Franklin, TN", rating: 5, service: "Storm Damage Repair", date: "August 2024", text: "After the hailstorm, Robert responded within hours of my call. He came out, assessed the damage thoroughly, and walked us through the entire insurance process step by step. He worked directly with our adjuster and the new roof looks incredible. Fast, reliable, and honest — exactly what you want when you're stressed about storm damage." },
-  { name: "Mark T.", location: "Murfreesboro, TN", rating: 5, service: "Standing Seam Metal Roof", date: "June 2024", text: "We got three bids and StoneMark came in competitive while offering the best warranty package. The standing seam metal roof they installed is beautiful — exactly what we wanted. Robert was hands-on the entire time and you can tell he genuinely cares about the quality of his work. This is a man who takes pride in his craft." },
-  { name: "Susan R.", location: "Nolensville, TN", rating: 5, service: "Gutters & Soffit Repair", date: "May 2024", text: "Excellent work on our gutters and soffit repair. The crew was professional and cleaned up perfectly — you wouldn't have known they were there except for the beautiful new gutters. Robert personally inspected the finished job before leaving. This is what a local contractor should look like." },
-  { name: "Chris B.", location: "Spring Hill, TN", rating: 5, service: "Commercial TPO Roofing", date: "March 2024", text: "45 years of experience shows. Our commercial building needed a TPO roof and StoneMark delivered on time and on budget. Robert's knowledge of commercial roofing systems is impressive — he identified issues with our existing drainage that other contractors missed. Will absolutely use again for our other properties." },
-  { name: "Amanda L.", location: "Nashville, TN", rating: 5, service: "Asphalt Shingle Replacement", date: "February 2024", text: "From the first call to the final inspection, the experience was smooth and professional. Robert is the kind of contractor you want — responsive, knowledgeable, and honest. He told me upfront what I needed and what I didn't. The roof looks great and the price was fair. Highly recommend." },
-  { name: "Tom W.", location: "Columbia, TN", rating: 5, service: "Asphalt Shingle Replacement", date: "January 2024", text: "StoneMark replaced our 25-year-old roof and the difference is night and day. The crew was efficient and professional. Robert walked me through the shingle options and helped me choose the right product for our budget. The job was done in one day, which I honestly didn't believe was possible for a house our size." },
-  { name: "Patricia H.", location: "Smyrna, TN", rating: 5, service: "Storm Damage & Insurance Claim", date: "November 2023", text: "I was nervous about the insurance claim process but Robert made it easy. He documented everything, communicated with the adjuster, and kept me informed at every step. The repair was done quickly and professionally. I felt like I had an advocate in my corner throughout the whole process." },
-  { name: "Kevin D.", location: "Hendersonville, TN", rating: 5, service: "Metal Roofing", date: "September 2023", text: "Had StoneMark install a standing seam metal roof on our new construction. Robert's attention to detail is exceptional — the flashing work around our chimney and skylights is perfect. He clearly knows what he's doing and doesn't cut corners. Worth every penny for the quality we received." },
-  { name: "Lisa M.", location: "Brentwood, TN", rating: 5, service: "Seamless Gutters", date: "July 2023", text: "Quick, clean, and professional gutter installation. The seamless gutters look great and the crew cleaned up completely before leaving. Robert followed up a week later to make sure everything was working properly. That kind of follow-through is rare and much appreciated." },
-  { name: "James F.", location: "Franklin, TN", rating: 5, service: "Asphalt Shingle Replacement", date: "June 2023", text: "StoneMark came highly recommended by our neighbor and they did not disappoint. Competitive pricing, excellent workmanship, and a crew that clearly knows what they're doing. The new roof has already been through two major storms and not a single issue. Robert stands behind his work." },
-  { name: "Carol B.", location: "Murfreesboro, TN", rating: 5, service: "Soffit & Fascia Repair", date: "April 2023", text: "Robert identified rot in our fascia that we didn't even know about. He explained exactly what needed to be done, why, and what it would cost — no upselling, no pressure. The repair looks seamless and he matched the paint color perfectly. Honest, skilled, and fairly priced." },
+  { name: "Chris Morse", location: "Google Review", rating: 5, service: "Roof Replacement", date: "5 years ago", text: "We Contracted with Robert Yeatman to enclose our carport and replace the roof. His crew was punctual and did an Excellent job. The existing carport was not very attractive, but after they completed their work, It looks Great!!" },
+  { name: "lisa mcghee", location: "Google Review", rating: 5, service: "Roof & Gutters", date: "5 years ago", text: "I am very happy with my new roof and gutters. Already received many compliments! Robert and his crew were very quick to get the job done. Very impressed! I highly recommend Stonemark to anyone who needs a new roof!!" },
+  { name: "Val Hard", location: "Mt. Juliet", rating: 5, service: "Asphalt Shingles", date: "8 years ago", text: "They gave us a fair price and did a very good job replacing our asphalt shingles roof in Mt. Juliet." },
+  { name: "BARB Prince", location: "Google Review", rating: 5, service: "Roof & Venting System", date: "3 years ago", text: "We are extremely happy with Robert and his company for the new roof and venting system that was done on our home. Our original roof was 22 years old and it was time for a new roof. Would highly recommend him." },
+  { name: "Shannon Black", location: "Google Review", rating: 5, service: "Roof Replacement", date: "7 years ago", text: "StoneMark did an excellent job on our roof: one day here and done. Everything was explained thoroughly and we really got the sense we were working with true professionals. Great roof at a great price!" },
+  { name: "Valerie Jones", location: "Google Review", rating: 5, service: "Roof Installation", date: "2 years ago", text: "I would recommend them for any of your needs. I had to have a roof put on and Mr Yeatman sat down and walked me through the process step by step. They came when they said they would and he was there to supervise." },
+  { name: "Ken Dorsey", location: "Google Review", rating: 5, service: "Roof Replacement", date: "2 years ago", text: "Robert is a Class act. Gave me a quote in writing, that was easy to read and understand. Used quality materials and was priced extremely competitive in my opinion." },
+  { name: "Karen P Munn Johnson", location: "Google Review", rating: 5, service: "Roofing Work", date: "6 years ago", text: "Mr. Yeatman and his son were professional, efficient, and friendly. They gave the BEST quote for the roofing work needed. The work was timely and looked wonderful. We HIGHLY recommend The StoneMark Company." },
+  { name: "Sharon Yeatman", location: "Google Review", rating: 5, service: "Roof Replacement", date: "5 years ago", text: "I am very pleased with the work that The StoneMark Company did for me. The pricing seemed to be fair. Throughout the process they kept me informed. they showed up the day they said they would and completed the entire job in one day." },
+  { name: "Jeff Gervais", location: "Google Review", rating: 5, service: "Roof Estimate", date: "4 years ago", text: "I hired The Stonemark Company after doing my research and getting a few estimates. They quoted me about $900 cheaper than the others using the same equipment as the other companies were using with the same warranties." },
+  { name: "Faye Waters", location: "Google Review", rating: 5, service: "Roof Replacement", date: "2 years ago", text: "The StoneMark Company replaced my roof and it looks amazing! Robert is great to work with too!" },
+  { name: "Dr. Rose Ogilvie", location: "Google Review", rating: 5, service: "Roofing Service", date: "4 years ago", text: "Very attentive to specific details, kept materials very, very organized. I never expected this from a roofing company. The owner went beyond the call of duty and beyond expectations. Kept the price..." },
+  { name: "Audie Nicdao", location: "Google Review", rating: 5, service: "Roof Project", date: "4 years ago", text: "Robert Yeatman was so professional that he did not take any portion of the money until the project was done." },
+  { name: "tommy hargrove", location: "Google Review", rating: 5, service: "Roofing Service", date: "3 years ago", text: "Great company. My 1st choice in roofing!!" },
+  { name: "Missy", location: "Google Review", rating: 5, service: "Roof Installation", date: "5 years ago", text: "I highly recommend! Prompt, courteous and professional. Highest quality product and expert installation." },
+  { name: "Alem Gebreyes", location: "Google Review", rating: 5, service: "Roof Service", date: "2 years ago", text: "Robert did an excellent job on my roof!" },
+  { name: "Antoinette Hicks", location: "Google Review", rating: 5, service: "Roof Repair", date: "2 years ago", text: "Go wonderful roof" },
+  { name: "Big C Alexander", location: "Google Review", rating: 5, service: "Roofing Service", date: "2 years ago", text: "Prompt and professional service." },
+  { name: "gracie lewis", location: "Google Review", rating: 5, service: "Roof Installation", date: "2 years ago", text: "Wonderful Experience!!" },
+  { name: "Parker Redmond", location: "Google Review", rating: 5, service: "Roof Replacement", date: "2 days ago", text: "Robert and his team did a fantastic job on our roof replacement. He explained the product choices and process thoroughly and kept us up to date through the completion of the job. The roof took only one day from start to finish." },
+  { name: "Blake", location: "Google Review", rating: 5, service: "Total Tear Off & New Roof", date: "1 week ago", text: "Very professional and prompt with every aspect of the job. The crew was hard working and polite. They made sure they protected the shrubbery and covered my in ground pool to protect it. We had a total tear off and new replacement roof." },
+  { name: "Randy Claiborne", location: "Murfreesboro, TN", rating: 5, service: "Roof Replacement", date: "3 weeks ago", text: "5 stars! The StoneMark Company in Murfreesboro, TN replaced my roof flawlessly. Robert Yeatman handled everything personally. He gave an in-depth overview of my old roof, multiple shingle options..." },
+  { name: "Mike Hassell", location: "Google Review", rating: 5, service: "Roof Replacement", date: "3 weeks ago", text: "Absolutely a great job replacing my roof. And the cleanup afterwards, you will not believe I highly recommend them for a replacement of your roof." },
+  { name: "Thomas", location: "Google Review", rating: 5, service: "Rental Property Roofs", date: "4 weeks ago", text: "I recently had StoneMark do 2 roofs for me on rental properties. The installation was handled professionally from start to finish! Their workers showed up properly at 7am and began the installation." },
+  { name: "Truong Nguyen", location: "Google Review", rating: 5, service: "Roofing Service", date: "2 years ago", text: "Professional roofing contractor with excellent attention to detail." }
 ];
 
 const themes = [
@@ -39,38 +52,38 @@ export default function Reviews() {
         eyebrow="Customer Reviews"
         title="WHAT NASHVILLE"
         titleAccent="IS SAYING."
-        subtitle="22+ verified Google reviews. A 5.0 star rating. Real customers, real results — from Brentwood to Columbia and everywhere in between."
+        subtitle="25+ verified Google reviews. A 5.0 star rating. Real customers, real results — from Brentwood to Columbia and everywhere in between."
         bgImage={HERO_IMAGE}
       />
 
       {/* Rating summary */}
-      <section className="py-16 bg-[#3A3F4A]">
+      <section className="py-16 bg-background">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div className="md:col-span-1 bg-[#4A5060] border border-[#F97316]/30 p-8 flex flex-col items-center justify-center text-center">
+            <div className="md:col-span-1 bg-card border border-[#F97316]/30 p-8 flex flex-col items-center justify-center text-center">
               <div className="font-['Barlow_Condensed'] text-[#F97316] leading-none mb-2" style={{ fontSize: "5rem", fontWeight: 900 }}>5.0</div>
               <div className="flex gap-1 mb-3">{[...Array(5)].map((_, i) => <Star key={i} size={20} className="fill-[#F97316] text-[#F97316]" />)}</div>
-              <div className="font-['DM_Sans'] text-white font-medium mb-1">Google Rating</div>
-              <div className="font-['DM_Sans'] text-white/50 text-sm">Based on 22+ reviews</div>
+              <div className="font-['DM_Sans'] text-foreground font-medium mb-1">Google Rating</div>
+              <div className="font-['DM_Sans'] text-muted-foreground text-sm">Based on 25+ reviews</div>
             </div>
-            <div className="md:col-span-2 bg-[#4A5060] border border-white/10 p-8">
-              <h3 className="font-['Barlow_Condensed'] text-white text-2xl uppercase mb-6" style={{ fontWeight: 800 }}>Rating Breakdown</h3>
+            <div className="md:col-span-2 bg-card border border-border p-8">
+              <h3 className="font-['Barlow_Condensed'] text-foreground text-2xl uppercase mb-6" style={{ fontWeight: 800 }}>Rating Breakdown</h3>
               {[5, 4, 3, 2, 1].map((stars) => (
                 <div key={stars} className="flex items-center gap-4 mb-3">
                   <div className="flex gap-0.5 w-20 flex-shrink-0">
                     {[...Array(stars)].map((_, i) => <Star key={i} size={12} className="fill-[#F97316] text-[#F97316]" />)}
                     {[...Array(5 - stars)].map((_, i) => <Star key={i} size={12} className="text-white/20" />)}
                   </div>
-                  <div className="flex-1 h-2 bg-[#3A3F4A] relative">
+                  <div className="flex-1 h-2 bg-muted relative">
                     <div
                       className="absolute inset-y-0 left-0 bg-[#F97316]"
                       style={{ width: stars === 5 ? "100%" : stars === 4 ? "0%" : "0%" }}
                     />
                   </div>
-                  <span className="font-['DM_Sans'] text-white/50 text-sm w-8 text-right">{stars === 5 ? "22" : "0"}</span>
+                  <span className="font-['DM_Sans'] text-muted-foreground text-sm w-8 text-right">{stars === 5 ? "25" : "0"}</span>
                 </div>
               ))}
-              <p className="font-['DM_Sans'] text-white/40 text-xs mt-4">All 22+ reviews are 5-star ratings on Google.</p>
+              <p className="font-['DM_Sans'] text-muted-foreground/60 text-xs mt-4">All 25+ reviews are 5-star ratings on Google.</p>
             </div>
           </div>
 
@@ -84,13 +97,13 @@ export default function Reviews() {
               {themes.map((t) => {
                 const Icon = t.icon;
                 return (
-                  <div key={t.title} className="p-5 border border-white/10 bg-[#4A5060]">
-                    <div className="w-10 h-10 bg-[#F97316]/15 flex items-center justify-center mb-4">
+                  <div key={t.title} className="p-5 border border-border bg-card">
+                    <div className="w-10 h-10 bg-[#F97316]/10 flex items-center justify-center mb-4">
                       <Icon size={18} className="text-[#F97316]" />
                     </div>
-                    <h4 className="font-['Barlow_Condensed'] text-white text-base uppercase tracking-wide mb-1" style={{ fontWeight: 700 }}>{t.title}</h4>
+                    <h4 className="font-['Barlow_Condensed'] text-foreground text-base uppercase tracking-wide mb-1" style={{ fontWeight: 700 }}>{t.title}</h4>
                     <div className="font-['DM_Sans'] text-[#F97316] text-xs mb-2">{t.count}</div>
-                    <p className="font-['DM_Sans'] text-white/55 text-sm leading-relaxed">{t.desc}</p>
+                    <p className="font-['DM_Sans'] text-muted-foreground text-sm leading-relaxed">{t.desc}</p>
                   </div>
                 );
               })}
@@ -104,17 +117,17 @@ export default function Reviews() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {reviews.map((r, i) => (
-              <div key={i} className="bg-[#4A5060] border border-white/10 p-6 hover:border-[#F97316]/40 transition-all duration-300 relative group">
-                <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+              <div key={i} className="bg-card border border-border p-6 hover:border-[#F97316]/40 transition-all duration-300 relative group">
+                <div className="absolute top-4 right-4 opacity-5 group-hover:opacity-10 transition-opacity">
                   <Quote size={36} className="text-[#F97316]" />
                 </div>
                 <div className="flex gap-1 mb-1">{[...Array(r.rating)].map((_, j) => <Star key={j} size={13} className="fill-[#F97316] text-[#F97316]" />)}</div>
-                <div className="font-['DM_Sans'] text-white/35 text-xs mb-3">{r.date}</div>
-                <p className="font-['DM_Sans'] text-white/70 text-sm leading-relaxed mb-5">"{r.text}"</p>
+                <div className="font-['DM_Sans'] text-muted-foreground/40 text-xs mb-3">{r.date}</div>
+                <p className="font-['DM_Sans'] text-foreground/70 text-sm leading-relaxed mb-5">"{r.text}"</p>
                 <div className="flex items-end justify-between">
                   <div>
-                    <div className="font-['Barlow_Condensed'] text-white text-base uppercase tracking-wide" style={{ fontWeight: 700 }}>{r.name}</div>
-                    <div className="font-['DM_Sans'] text-white/40 text-xs">{r.location}</div>
+                    <div className="font-['Barlow_Condensed'] text-foreground text-base uppercase tracking-wide" style={{ fontWeight: 700 }}>{r.name}</div>
+                    <div className="font-['DM_Sans'] text-muted-foreground/50 text-xs">{r.location}</div>
                   </div>
                   <div className="bg-[#F97316]/10 border border-[#F97316]/20 px-2 py-1">
                     <span className="font-['Barlow_Condensed'] text-[#F97316] text-xs uppercase tracking-widest">{r.service}</span>

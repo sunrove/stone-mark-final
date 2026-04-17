@@ -14,8 +14,8 @@ interface PageHeroProps {
 export default function PageHero({ eyebrow, title, titleAccent, subtitle, bgImage }: PageHeroProps) {
   return (
     <section
-      className="relative pt-32 pb-24 overflow-hidden"
-      style={{ background: bgImage ? undefined : "linear-gradient(135deg, #1C1F26 0%, #22252e 100%)" }}
+      className="relative pt-32 pb-24 overflow-hidden bg-background"
+      style={{ background: bgImage ? undefined : "linear-gradient(135deg, var(--card) 0%, var(--background) 100%)" }}
     >
       {bgImage && (
         <>
@@ -23,46 +23,46 @@ export default function PageHero({ eyebrow, title, titleAccent, subtitle, bgImag
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${bgImage})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1C1F26]/95 via-[#1C1F26]/85 to-[#1C1F26]/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/60" />
         </>
       )}
 
       {/* Background grid pattern */}
       <div
-        className="absolute inset-0 opacity-[0.025]"
+        className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage: `
-            linear-gradient(#F97316 1px, transparent 1px),
-            linear-gradient(90deg, #F97316 1px, transparent 1px)
+            linear-gradient(var(--orange) 1px, transparent 1px),
+            linear-gradient(90deg, var(--orange) 1px, transparent 1px)
           `,
           backgroundSize: "60px 60px",
         }}
       />
 
       {/* Orange top accent */}
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#F97316]" />
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-orange" />
 
       <div className="container relative z-10">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-[3px] bg-[#F97316]" />
-          <span className="font-['Barlow_Condensed'] text-[#F97316] uppercase tracking-[0.25em] text-sm font-semibold">
+          <div className="w-8 h-[3px] bg-orange" />
+          <span className="font-['Barlow_Condensed'] text-orange uppercase tracking-[0.25em] text-sm font-semibold">
             {eyebrow}
           </span>
         </div>
         <h1
-          className="font-['Barlow_Condensed'] text-white leading-none mb-4"
+          className="font-['Barlow_Condensed'] text-foreground leading-none mb-4"
           style={{ fontSize: "clamp(2.8rem, 6vw, 5.5rem)", fontWeight: 900 }}
         >
           {title}
           {titleAccent && (
             <>
               <br />
-              <span className="text-[#F97316]">{titleAccent}</span>
+              <span className="text-orange">{titleAccent}</span>
             </>
           )}
         </h1>
         {subtitle && (
-          <p className="font-['DM_Sans'] text-white/65 text-lg max-w-2xl leading-relaxed">
+          <p className="font-['DM_Sans'] text-muted-foreground text-lg max-w-2xl leading-relaxed">
             {subtitle}
           </p>
         )}
@@ -70,7 +70,7 @@ export default function PageHero({ eyebrow, title, titleAccent, subtitle, bgImag
 
       {/* Diagonal bottom cut */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-16 bg-[#3A3F4A]"
+        className="absolute bottom-0 left-0 right-0 h-16 bg-background"
         style={{ clipPath: "polygon(0 60%, 100% 0%, 100% 100%, 0% 100%)" }}
       />
     </section>

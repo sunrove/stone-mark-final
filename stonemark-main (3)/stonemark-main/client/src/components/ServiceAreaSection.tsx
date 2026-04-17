@@ -76,9 +76,9 @@ export default function ServiceAreaSection() {
                 <span className="text-[#F97316]">MIDDLE TENNESSEE.</span>
               </h2>
               <p className="font-['DM_Sans'] text-white/60 text-lg leading-relaxed mb-8">
-                Based in Nashville, we serve the greater Middle Tennessee region across
-                Davidson, Williamson, Rutherford, and Maury counties. If you're unsure
-                whether we cover your area, give us a call.
+                We serve the greater Middle Tennessee region. We service any home within 
+                an hour of Murfreesboro. We cover Davidson, Williamson, Rutherford, 
+                and Maury counties. If you're unsure whether we cover your area, give us a call.
               </p>
             </div>
 
