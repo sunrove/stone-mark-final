@@ -1,0 +1,289 @@
+/*
+ * STONEMARK COMPANY — INDUSTRIAL BRUTALISM WITH ORANGE FIRE
+ * Design Movement: Industrial Brutalism meets American Trade Craft
+ * Color Philosophy: Deep charcoal (#1C1F26) canvas, electric orange (#F97316) signal, white body text
+ * Typography: Barlow Condensed ExtraBold (display) + DM Sans (body)
+ * Layout: Asymmetric splits, diagonal orange slash dividers, staggered brick grids
+ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.125rem; /* Brutalism: near-zero radius, sharp edges */
+
+  /* Brand Colors */
+  --orange: oklch(0.65 0.22 40);        /* #F97316 electric orange */
+  --orange-dark: oklch(0.55 0.22 40);   /* darker orange for hover */
+  --charcoal: oklch(0.28 0.01 260);     /* #3A3F4A softer grey-charcoal */
+  --charcoal-light: oklch(0.35 0.01 260); /* lighter card bg */
+  --charcoal-mid: oklch(0.42 0.01 260);   /* mid grey for borders */
+
+  /* Semantic tokens */
+  --primary: var(--orange);
+  --primary-foreground: oklch(0.98 0 0);
+  --background: var(--charcoal);
+  --foreground: oklch(0.98 0.005 65);
+  --card: var(--charcoal-light);
+  --card-foreground: oklch(0.98 0.005 65);
+  --popover: var(--charcoal-light);
+  --popover-foreground: oklch(0.98 0.005 65);
+  --secondary: var(--charcoal-mid);
+  --secondary-foreground: oklch(0.90 0.005 65);
+  --muted: var(--charcoal-mid);
+  --muted-foreground: oklch(0.72 0.01 65);
+  --accent: var(--orange);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: var(--charcoal-mid);
+  --input: var(--charcoal-mid);
+  --ring: var(--orange);
+  --sidebar: var(--charcoal-light);
+  --sidebar-foreground: oklch(0.98 0.005 65);
+  --sidebar-primary: var(--orange);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: var(--charcoal-mid);
+  --sidebar-accent-foreground: oklch(0.98 0.005 65);
+  --sidebar-border: var(--charcoal-mid);
+  --sidebar-ring: var(--orange);
+  --chart-1: var(--orange);
+  --chart-2: oklch(0.65 0.15 40);
+  --chart-3: oklch(0.55 0.10 40);
+  --chart-4: oklch(0.45 0.08 40);
+  --chart-5: oklch(0.35 0.05 40);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Orange slash diagonal divider */
+  .slash-divider {
+    position: relative;
+    overflow: hidden;
+  }
+  .slash-divider::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: oklch(0.32 0.01 260);
+    clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  /* Orange underline accent */
+  .orange-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .orange-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: oklch(0.65 0.22 40);
+  }
+
+  /* CTA button fill-from-left animation */
+  .btn-orange {
+    position: relative;
+    overflow: hidden;
+    background: oklch(0.65 0.22 40);
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.75rem 2rem;
+    border: 2px solid oklch(0.65 0.22 40);
+    transition: all 0.25s ease;
+    clip-path: none;
+  }
+  .btn-orange:hover {
+    background: oklch(0.55 0.22 40);
+    border-color: oklch(0.55 0.22 40);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px oklch(0.65 0.22 40 / 0.35);
+  }
+
+  .btn-outline-orange {
+    position: relative;
+    background: transparent;
+    color: oklch(0.65 0.22 40);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.75rem 2rem;
+    border: 2px solid oklch(0.65 0.22 40);
+    transition: all 0.25s ease;
+  }
+  .btn-outline-orange:hover {
+    background: oklch(0.65 0.22 40);
+    color: white;
+    transform: translateY(-1px);
+  }
+
+  /* Service card hover */
+  .service-card {
+    background: oklch(0.32 0.01 260);
+    border: 1px solid oklch(0.40 0.01 260);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: oklch(0.65 0.22 40);
+    transition: height 0.3s ease;
+  }
+  .service-card:hover::before {
+    height: 100%;
+  }
+  .service-card:hover {
+    border-color: oklch(0.65 0.22 40 / 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px oklch(0 0 0 / 0.25);
+  }
+
+  /* Noise texture overlay */
+  .noise-overlay {
+    position: relative;
+  }
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.04;
+  }
+}
+
+/* Scroll animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes countUp {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease forwards;
+}
