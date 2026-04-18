@@ -26,7 +26,23 @@ function Router() {
   );
 }
 
+import { useEffect } from "react";
+
 function App() {
+  useEffect(() => {
+    const endpoint = import.meta.env.VITE_ANALYTICS_ENDPOINT;
+    const websiteId = import.meta.env.VITE_ANALYTICS_WEBSITE_ID;
+
+    if (endpoint && websiteId) {
+      const script = document.createElement("script");
+      script.src = `${endpoint}/umami`;
+      script.setAttribute("data-website-id", websiteId);
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  }, []);
+
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
