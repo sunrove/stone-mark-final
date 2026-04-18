@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -26,7 +27,7 @@ function Router() {
   );
 }
 
-import { useEffect } from "react";
+
 
 function App() {
   useEffect(() => {
