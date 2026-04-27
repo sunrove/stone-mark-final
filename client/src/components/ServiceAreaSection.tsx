@@ -11,7 +11,7 @@ const cities = [
   "Nashville", "Brentwood", "Franklin", "Murfreesboro",
   "Smyrna", "Nolensville", "Spring Hill", "Columbia",
   "Antioch", "Hermitage", "Mount Juliet", "Hendersonville",
-  "Gallatin", "Lebanon", "La Vergne", "Lavergne",
+  "Gallatin", "White House", "La Vergne", "Goodlettsville",
 ];
 
 const counties = [

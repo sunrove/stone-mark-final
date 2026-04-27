@@ -22,7 +22,7 @@ const counties = [
     name: "Williamson County",
     highlight: "Brentwood & Franklin",
     color: "#F97316",
-    cities: ["Brentwood", "Franklin", "Nolensville", "Spring Hill (partial)", "Fairview", "Thompson's Station", "College Grove"],
+    cities: ["Brentwood", "Franklin", "Nolensville", "Spring Hill", "Fairview", "Thompson's Station", "College Grove"],
     desc: "One of our most active service areas. Williamson County's growth has brought us hundreds of residential roofing projects across its thriving communities.",
   },
   {
@@ -143,7 +143,7 @@ export default function ServiceArea() {
                 "Bellevue", "Hermitage", "Madison", "Old Hickory", "Donelson",
                 "Thompson's Station", "Fairview", "College Grove", "Mount Pleasant",
                 "Eagleville", "Rockvale", "Christiana", "Lascassas", "Hampshire",
-                "Goodlettsville", "Hendersonville", "Gallatin (partial)", "White House (partial)",
+                "Goodlettsville", "Hendersonville", "Gallatin", "White House",
               ].map((city) => (
                 <div key={city} className="flex items-center gap-2 py-1.5">
                   <div className="w-1 h-1 bg-[#F97316] rotate-45 flex-shrink-0" />
