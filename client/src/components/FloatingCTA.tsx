@@ -19,14 +19,14 @@ export default function FloatingCTA() {
   return (
     <a
       href="tel:6152997552"
-      className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-orange text-white h-14 px-6 rounded-full shadow-lg shadow-orange/20 transition-all duration-300 hover:scale-105 active:scale-95 ${
+      className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-white text-[#F97316] border-2 border-[#F97316] h-14 px-6 rounded-full shadow-2xl shadow-black/30 transition-all duration-300 hover:bg-[#F97316] hover:text-white hover:scale-105 active:scale-95 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
       aria-label="Call StoneMark"
     >
       {/* Pulse ring */}
       <span className="relative flex h-5 w-5 flex-shrink-0">
-        <span className="animate-ping absolute inline-flex h-full w-full bg-white opacity-30" />
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F97316] opacity-40" />
         <Phone size={18} className="relative" />
       </span>
       <span className="font-['Barlow_Condensed'] font-700 text-base uppercase tracking-widest hidden sm:block" style={{ fontWeight: 700 }}>
