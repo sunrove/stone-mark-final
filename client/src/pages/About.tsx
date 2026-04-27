@@ -4,6 +4,7 @@
  */
 
 import { Link } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 import { Shield, Award, Users, Wrench, CheckCircle, ArrowRight } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
@@ -37,6 +38,11 @@ const timeline = [
 ];
 
 export default function About() {
+  useSEO({
+    title: "About StoneMark | Nashville Roofer | 45+ Years Experience",
+    description: "Meet Robert Yeatman and The StoneMark Company. 45+ years of roofing experience, GAF Certified, A+ BBB Rating, and locally owned in Middle Tennessee. We personally oversee every roof we install.",
+    canonical: "/about",
+  });
   return (
     <PageLayout>
       <PageHero

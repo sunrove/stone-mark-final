@@ -4,6 +4,7 @@
  */
 
 import { Link } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 import { Star, Quote, ThumbsUp, ArrowRight } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
@@ -46,6 +47,11 @@ const themes = [
 ];
 
 export default function Reviews() {
+  useSEO({
+    title: "Customer Reviews | StoneMark Roofing Nashville | 5-Star Rated",
+    description: "25+ five-star Google reviews for The StoneMark Company. Nashville homeowners in Brentwood, Franklin, Murfreesboro, and across Middle Tennessee trust StoneMark for quality roofing and gutters.",
+    canonical: "/reviews",
+  });
   return (
     <PageLayout>
       <PageHero

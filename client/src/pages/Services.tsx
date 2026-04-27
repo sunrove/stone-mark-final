@@ -4,6 +4,7 @@
  */
 
 import { useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle, ChevronDown, ChevronUp, Phone, ExternalLink, Shield, Layers, BarChart2, Grid } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
@@ -463,6 +464,11 @@ function FAQ() {
 }
 
 export default function Services() {
+  useSEO({
+    title: "Roofing Services Nashville TN | Shingles, Metal, TPO, Gutters | StoneMark",
+    description: "Complete roofing services in Nashville and Middle Tennessee. Asphalt shingle roof replacement, standing seam metal roofing, TPO flat roofing, seamless gutters, soffit & fascia, and storm damage repair. GAF Certified. Free estimates.",
+    canonical: "/services",
+  });
   return (
     <PageLayout>
       <PageHero

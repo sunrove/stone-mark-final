@@ -5,6 +5,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
 import { Link } from "wouter";
 import { Phone, Star, ArrowRight, Shield, Clock, Award, DollarSign, Wrench, Users, Check } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
@@ -428,6 +429,11 @@ function CTABanner() {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function Home() {
+  useSEO({
+    title: "The StoneMark Company | Nashville Roofing Contractor | GAF Certified",
+    description: "Nashville's trusted roofing contractor with 45+ years of experience. GAF Certified Master Elite. Asphalt shingles, metal roofing, TPO, seamless gutters, and storm damage repair. Serving Middle Tennessee. Free estimates. Call (615) 299-7552.",
+    canonical: "/",
+  });
   return (
     <PageLayout>
       <Hero />

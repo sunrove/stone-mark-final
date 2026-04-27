@@ -4,6 +4,7 @@
  */
 
 import { useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
 import { Phone, Mail, MapPin, Clock, CheckCircle, AlertCircle } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
@@ -31,6 +32,11 @@ const urgency = [
 type FormState = "idle" | "submitting" | "success" | "error";
 
 export default function Contact() {
+  useSEO({
+    title: "Free Roofing Estimate Nashville TN | Contact StoneMark | (615) 299-7552",
+    description: "Request a free roofing estimate from StoneMark in Nashville, TN. Call Robert Yeatman at (615) 299-7552 or fill out the form. We respond quickly — same day for storm damage. Serving all of Middle Tennessee.",
+    canonical: "/contact",
+  });
   const [form, setForm] = useState({
     name: "", phone: "", email: "", address: "", service: "", urgency: "", message: "",
   });

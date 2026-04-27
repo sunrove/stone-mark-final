@@ -4,6 +4,7 @@
  */
 
 import { Link } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 import { MapPin, Phone, CheckCircle, ArrowRight } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
@@ -49,6 +50,11 @@ const faqArea = [
 ];
 
 export default function ServiceArea() {
+  useSEO({
+    title: "Roofing Service Area | Nashville, Brentwood, Franklin, Murfreesboro | StoneMark",
+    description: "StoneMark serves all of Middle Tennessee including Nashville, Brentwood, Franklin, Murfreesboro, Smyrna, Spring Hill, Columbia, Hendersonville, and surrounding areas. Within 1 hour of Murfreesboro. Free estimates.",
+    canonical: "/service-area",
+  });
   return (
     <PageLayout>
       <PageHero
