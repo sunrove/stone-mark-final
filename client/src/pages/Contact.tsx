@@ -40,13 +40,35 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setState("submitting");
-    // Simulate form submission (no backend in static mode)
-    setTimeout(() => {
-      setState("success");
-    }, 1200);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY ?? "",
+          subject: `New Roofing Estimate Request from ${form.name}`,
+          from_name: "StoneMark Website",
+          name: form.name,
+          phone: form.phone,
+          email: form.email || "(not provided)",
+          address: form.address || "(not provided)",
+          service: form.service,
+          urgency: form.urgency || "(not specified)",
+          message: form.message || "(no additional details)",
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setState("success");
+      } else {
+        setState("error");
+      }
+    } catch {
+      setState("error");
+    }
   };
 
   return (

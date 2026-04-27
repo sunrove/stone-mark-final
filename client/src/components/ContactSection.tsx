@@ -8,7 +8,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
 
 export default function ContactSection() {
-  const [submitted, setSubmitted] = useState(false);
+  const [state, setState] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -23,10 +23,29 @@ export default function ContactSection() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production this would send to a backend/email service
-    setSubmitted(true);
+    setState("submitting");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY ?? "",
+          subject: `New Roofing Estimate Request from ${form.name}`,
+          from_name: "StoneMark Website",
+          name: form.name,
+          phone: form.phone,
+          email: form.email || "(not provided)",
+          service: form.service,
+          message: form.message || "(no additional details)",
+        }),
+      });
+      const data = await res.json();
+      setState(data.success ? "success" : "error");
+    } catch {
+      setState("error");
+    }
   };
 
   const inputClass =
@@ -161,7 +180,7 @@ export default function ContactSection() {
 
           {/* Right: Form (3/5) */}
           <div className="lg:col-span-3">
-            {submitted ? (
+            {state === "success" ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-16 border border-[#F97316]/30 bg-[#F97316]/5">
                 <CheckCircle size={56} className="text-[#F97316] mb-4" />
                 <h3
@@ -243,8 +262,8 @@ export default function ContactSection() {
                     <option value="asphalt-shingle">Asphalt Shingle Roof Replacement</option>
                     <option value="metal-roofing">Standing Seam / Metal Roofing</option>
                     <option value="tpo-roofing">Low-Slope / TPO Roofing</option>
-                    <option value="gutters">Seamless Gutters & Gutter Guards</option>
-                    <option value="soffit-fascia">Soffit & Fascia Repair</option>
+                    <option value="gutters">Seamless Gutters &amp; Gutter Guards</option>
+                    <option value="soffit-fascia">Soffit &amp; Fascia Repair</option>
                     <option value="storm-damage">Storm Damage Repair</option>
                     <option value="other">Other / Not Sure</option>
                   </select>
@@ -264,11 +283,25 @@ export default function ContactSection() {
                   />
                 </div>
 
+                {state === "error" && (
+                  <div className="border border-red-500/30 bg-red-500/10 p-4">
+                    <p className="font-['DM_Sans'] text-red-400 text-sm">Something went wrong. Please call us at <a href="tel:6152997552" className="underline">(615) 299-7552</a>.</p>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="btn-orange w-full text-base py-4"
+                  disabled={state === "submitting"}
+                  className="btn-orange w-full text-base py-4 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send My Free Estimate Request
+                  {state === "submitting" ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    "Send My Free Estimate Request"
+                  )}
                 </button>
 
                 <p className="font-['DM_Sans'] text-white/30 text-xs text-center">
@@ -283,3 +316,4 @@ export default function ContactSection() {
     </section>
   );
 }
+
