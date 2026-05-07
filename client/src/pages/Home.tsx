@@ -74,7 +74,7 @@ function Hero() {
             className={`font-['Barlow_Condensed'] text-foreground leading-[0.92] mb-6 transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             style={{ fontSize: "clamp(3.5rem, 8vw, 7rem)", fontWeight: 900 }}
           >
-            BUILT TO<br /><span className="text-[#F97316]">LAST.</span><br />BUILT TO<br />PROTECT.
+            DESIGNED TO<br /><span className="text-[#F97316]">LAST.</span><br />INSTALLED TO<br />PROTECT.
           </h1>
 
           <p className={`font-['DM_Sans'] text-foreground/70 text-lg md:text-xl max-w-xl mb-8 leading-relaxed transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>

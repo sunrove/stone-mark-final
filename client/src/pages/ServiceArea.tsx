@@ -17,7 +17,7 @@ const counties = [
     highlight: "Nashville Metro",
     color: "#F97316",
     cities: ["Nashville", "Antioch", "Bellevue", "Donelson", "Hermitage", "Madison", "Old Hickory", "Goodlettsville"],
-    desc: "We serve all Nashville neighborhoods and Davidson County communities with the same hands-on service that built our reputation.",
+    desc: "We serve all Nashville neighborhoods and Davidson County communities with the same hands-on service that established our reputation.",
   },
   {
     name: "Williamson County",

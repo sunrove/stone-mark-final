@@ -66,11 +66,11 @@ export default function HeroSection() {
             }`}
             style={{ fontSize: "clamp(3.5rem, 8vw, 7rem)", fontWeight: 900 }}
           >
-            BUILT TO
+            DESIGNED TO
             <br />
             <span className="text-[#F97316]">LAST.</span>
             <br />
-            BUILT TO
+            INSTALLED TO
             <br />
             PROTECT.
           </h1>

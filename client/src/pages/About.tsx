@@ -9,8 +9,8 @@ import { Shield, Award, Users, Wrench, CheckCircle, ArrowRight } from "lucide-re
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 
-const HERO_IMAGE   = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-hero-X7CfTXXzMU2mAAirGBeBZL.webp";
-const METAL_IMAGE  = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-metal-roof-YSzM9t43uu4gj6TMuEpYoM.webp";
+const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-hero-X7CfTXXzMU2mAAirGBeBZL.webp";
+const METAL_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-metal-roof-YSzM9t43uu4gj6TMuEpYoM.webp";
 
 const credentials = [
   { label: "GAF Certified Contractor", desc: "Authorized to install GAF roofing systems with full manufacturer warranty backing. Only a select percentage of roofing contractors earn GAF Certified status." },
@@ -30,7 +30,7 @@ const values = [
 
 const timeline = [
   { year: "1980s", title: "The Foundation", desc: "Robert Yeatman begins his roofing career, learning the trade from the ground up — literally. He develops his expertise across residential and commercial projects throughout Tennessee." },
-  { year: "1990s", title: "Mastering the Craft", desc: "Over two decades of hands-on work across hundreds of roofing projects, Robert refines his techniques and builds deep knowledge of roofing systems, materials, and best practices." },
+  { year: "1990s", title: "Mastering the Craft", desc: "Over two decades of hands-on work across hundreds of roofing projects, Robert refines his techniques and develops deep knowledge of roofing systems, materials, and best practices." },
   { year: "2000s", title: "Building a Reputation", desc: "Word-of-mouth referrals grow as Robert's reputation for quality, honesty, and reliability spreads across Middle Tennessee neighborhoods." },
   { year: "2012", title: "StoneMark Founded", desc: "Robert establishes The StoneMark Company, bringing his 30+ years of experience under a formal business structure focused on residential and light commercial roofing." },
   { year: "2015+", title: "GAF Certification", desc: "StoneMark earns GAF Certified Contractor status, allowing the company to offer manufacturer-backed warranty systems and access to premium GAF roofing products." },
@@ -49,7 +49,7 @@ export default function About() {
         eyebrow="About StoneMark"
         title="45+ YEARS OF"
         titleAccent="ROOFING EXCELLENCE."
-        subtitle="Founded on experience, built on integrity. The StoneMark Company is Nashville's locally owned roofing contractor with the credentials, track record, and hands-on commitment to get the job done right."
+        subtitle="Founded on experience, rooted in integrity. The StoneMark Company is Nashville's locally owned roofing contractor with the credentials, track record, and hands-on commitment to get the job done right."
         bgImage={HERO_IMAGE}
       />
 

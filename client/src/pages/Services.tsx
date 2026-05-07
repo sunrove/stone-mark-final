@@ -11,11 +11,11 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 
 const SHINGLE_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-shingle-roof-jQW6GRNKU9ZJ4WaJaoDf5b.webp";
-const METAL_IMAGE   = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-metal-roof-YSzM9t43uu4gj6TMuEpYoM.webp";
+const METAL_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-metal-roof-YSzM9t43uu4gj6TMuEpYoM.webp";
 const GUTTERS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-gutters-inahw44ikfzdtCLnRktdzR.webp";
-const TPO_IMAGE     = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-tpo-roof-GWvFprdbgEknM55hGy7TBA.webp";
-const SOFFIT_IMAGE  = "/soffit-fascia.png";
-const STORM_IMAGE   = "/storm-damage.png";
+const TPO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463686821/KVD2cbSepdZ9AYQ9PcVg79/stonemark-tpo-roof-GWvFprdbgEknM55hGy7TBA.webp";
+const SOFFIT_IMAGE = "/soffit-fascia.png";
+const STORM_IMAGE = "/storm-damage.png";
 
 const services = [
   {
@@ -228,20 +228,17 @@ function GafContentBuilder() {
                 key={w.id}
                 id={`gaf-widget-btn-${w.id}`}
                 onClick={() => setActiveWidget(w.embedId)}
-                className={`text-left p-5 border-2 transition-all duration-200 group ${
-                  isActive
+                className={`text-left p-5 border-2 transition-all duration-200 group ${isActive
                     ? "border-[#F97316] bg-[#F97316]/5"
                     : "border-border bg-background hover:border-[#F97316]/50 hover:bg-[#F97316]/[0.02]"
-                }`}
+                  }`}
               >
-                <div className={`w-10 h-10 flex items-center justify-center mb-3 transition-colors ${
-                  isActive ? "bg-[#F97316]" : "bg-muted group-hover:bg-[#F97316]/10"
-                }`}>
+                <div className={`w-10 h-10 flex items-center justify-center mb-3 transition-colors ${isActive ? "bg-[#F97316]" : "bg-muted group-hover:bg-[#F97316]/10"
+                  }`}>
                   <Icon size={20} className={isActive ? "text-white" : "text-[#F97316]"} />
                 </div>
-                <div className={`font-['Barlow_Condensed'] text-sm uppercase tracking-wide mb-1 font-bold ${
-                  isActive ? "text-[#F97316]" : "text-foreground"
-                }`}>
+                <div className={`font-['Barlow_Condensed'] text-sm uppercase tracking-wide mb-1 font-bold ${isActive ? "text-[#F97316]" : "text-foreground"
+                  }`}>
                   {w.title}
                 </div>
                 <p className="font-['DM_Sans'] text-muted-foreground text-xs leading-relaxed">{w.desc}</p>
@@ -282,7 +279,7 @@ function GafContentBuilder() {
                   GAF's #1 selling shingle in America. The Timberline HDZ® features LayerLock™ technology and StainGuard Plus™ protection — available in over 30 colors to complement any home style.
                 </p>
                 <ul className="space-y-2 mb-8">
-                  {["30+ designer colors available","LayerLock™ nailing technology","StainGuard Plus™ algae protection","ENERGY STAR® qualified options","Up to 130 MPH wind warranty","Lifetime ltd. warranty (transferable)"].map(f => (
+                  {["30+ designer colors available", "LayerLock™ nailing technology", "StainGuard Plus™ algae protection", "ENERGY STAR® qualified options", "Up to 130 MPH wind warranty", "Lifetime ltd. warranty (transferable)"].map(f => (
                     <li key={f} className="flex items-start gap-2">
                       <CheckCircle size={14} className="text-[#F97316] flex-shrink-0 mt-0.5" />
                       <span className="font-['DM_Sans'] text-foreground/65 text-sm">{f}</span>
@@ -388,7 +385,7 @@ function GafContentBuilder() {
                 <table className="w-full text-sm border-collapse">
                   <thead>
                     <tr className="bg-[#F97316]">
-                      {["Feature","Timberline HDZ®","Timberline CS™","Camelot® II","Royal Sovereign®"].map(h => (
+                      {["Feature", "Timberline HDZ®", "Timberline CS™", "Camelot® II", "Royal Sovereign®"].map(h => (
                         <th key={h} className="font-['Barlow_Condensed'] text-white uppercase tracking-wide text-left p-3 text-xs">{h}</th>
                       ))}
                     </tr>
